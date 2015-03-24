@@ -1,5 +1,12 @@
+echo 'dropping db'
+mongo aggregation_bug --eval '
+db.dropDatabase();
+'
+
 echo 'Importing temp collection'
-mongoimport -d aggregation_bug -c tmp_import  --drop files/slovac_facts.json
+
+#mongoimport -d aggregation_bug -c tmp_import  --drop files/slovac_facts.json
+mongoimport -d aggregation_bug -c tmp_import  --drop files/two_facts.json
 
 
 echo '**** importing to real collection'

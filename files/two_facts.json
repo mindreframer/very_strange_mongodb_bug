@@ -1,0 +1,2 @@
+{"value":97957.0,"type":"some_kpi","date":{"$date":"2015-06-01T01:00:00.000+0100"},"dimensions":[{"class_name":"Market","name":"Slovak Republic"},{"class_name":"Brand","name":"Brand3"}],"cweek":23,"iso_year":2015,"year":2015,"month":6,"quarter":2,"day":1,"day_of_year":152,"day_of_week":1}
+{"value":47327.0,"type":"some_kpi","date":{"$date":"2013-01-01T01:00:00.000+0100"},"dimensions":[{"class_name":"Market","name":"Slovak Republic"},{"class_name":"Brand","name":"Brand4 "}],"cweek":1,"iso_year":2013,"year":2013,"month":1,"quarter":1,"day":1,"day_of_year":1,"day_of_week":2}

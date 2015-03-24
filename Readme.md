@@ -81,3 +81,8 @@ To see it, please run the script, that will import data to your local mongodb da
       ],
       "value" : 1070590
     }
+
+
+    ...
+    { "_id" : ObjectId("5511d792a2b63b1980796fd4"), "value" : 97957, "date" : ISODate("2015-06-01T00:00:00Z"), "dimensions" : [ { "class_name" : "Market", "name" : "Slovak Republic" }, { "class_name" : "Brand", "name" : "Brand3" } ], "cweek" : 23, "iso_year" : 2015, "year" : 2015, "month" : 6, "quarter" : 2, "day" : 1, "day_of_year" : 152, "day_of_week" : 1 }
+    { "_id" : ObjectId("5511d792a2b63b1980796fd5"), "value" : 47327, "date" : ISODate("2013-01-01T00:00:00Z"), "dimensions" : [ { "name" : "Slovak Republic", "class_name" : "Market" }, { "class_name" : "Brand", "name" : "Brand4 " } ], "cweek" : 1, "iso_year" : 2013, "year" : 2013, "month" : 1, "quarter" : 1, "day" : 1, "day_of_year" : 1, "day_of_week" : 2 }
