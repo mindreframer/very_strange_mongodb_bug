@@ -100,7 +100,7 @@ To see it, please run the script, that will import data to your local mongodb da
       ],
       "value" : 47327
     }
-    **** a workaround would be to force the order for object fields directly in the $group(aggregation) condition, e.g:
+    **** a workaround to force the order for object fields directly in the $group(aggregation) condition, e.g:
 
     MongoDB shell version: 3.0.1
     connecting to: aggregation_bug

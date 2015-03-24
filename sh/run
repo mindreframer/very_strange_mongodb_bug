@@ -35,7 +35,7 @@ db.some_kpi.aggregate(
 '
 
 
-echo '**** a workaround would be to force the order for object fields directly in the $group(aggregation) condition, e.g: '
+echo '**** a workaround to force the order for object fields directly in the $group(aggregation) condition, e.g: '
 echo
 mongo aggregation_bug --eval '
 db.some_kpi.aggregate(
