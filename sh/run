@@ -33,3 +33,26 @@ db.some_kpi.aggregate(
   ]
 ).forEach(printjson)
 '
+
+
+echo '**** a workaround would be to force the order for object fields directly in the $group(aggregation) condition, e.g: '
+echo
+mongo aggregation_bug --eval '
+db.some_kpi.aggregate(
+  [
+    {"$unwind": "$dimensions"},
+    {"$match": {"dimensions.class_name": {"$in": ["Market"]}}},
+    {
+      "$group": {
+        "_id": {"dimensions": {
+          "class_name": "$dimensions.class_name",
+          "name":       "$dimensions.name",
+        }},
+        "dates": {"$addToSet": "$date"},
+        "value": {"$sum": "$value"}
+     }
+    },
+    {"$sort": {"value": -1 } }
+  ]
+).forEach(printjson)
+'
