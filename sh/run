@@ -1,0 +1,28 @@
+echo 'Importing temp collection'
+mongoimport -d aggregation_bug -c tmp_import  --drop files/slovac_facts.json
+
+
+echo '**** importing to real collection'
+mongo aggregation_bug --eval '
+load("files/wrapper.js");
+wrapper({db_name: "aggregation_bug", import_collection_name: "tmp_import", allowed_dimension_types: ["Market", "Brand"]});'
+
+
+echo '**** this aggregation command returns 2 results instead of one....'
+mongo aggregation_bug --eval '
+
+db.some_kpi.aggregate(
+  [
+    {"$unwind": "$dimensions"},
+    {"$match": {"dimensions.class_name": {"$in": ["Market"]}}},
+    {
+      "$group": {
+        "_id": {"dimensions": "$dimensions"},
+        "dates": {"$addToSet": "$date"},
+        "value": {"$sum": "$value"}
+     }
+    },
+    {"$sort": {"value": -1 } }
+  ]
+).forEach(printjson)
+'
