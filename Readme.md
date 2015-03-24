@@ -63,6 +63,18 @@ To see it, please run the script, that will import data to your local mongodb da
 
 #### Solution (or workaround) would be to force the order for object fields directly in the $group(aggregation) condition, e.g:
 
+    ...
+    "$group": {
+        "_id": {"dimensions": {
+          "class_name": "$dimensions.class_name",
+          "name":       "$dimensions.name",
+        }},
+        "dates": {"$addToSet": "$date"},
+        "value": {"$sum": "$value"}
+     }
+     ...
+
+    ## AFTER WORKAROUND ##
     connecting to: aggregation_bug
     {
       "_id" : {
